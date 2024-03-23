@@ -1,0 +1,149 @@
+#Files 
+Problems related to Files:-
+	Isolation of data 
+	Integrity of data 
+	Atomacity
+	Updation,Insertion and Deletion Anamoly
+	Concurrent access
+
+#Mysql-> Relational database
+
+Data -> bits stored together, pixels etc (Qualitative or Quantitative) 
+
+Information -> When data present in raw format is processed for some analytics it becomes information.
+			example Reports-> high quality data.
+		
+Database?
+Data -> Data store -> all the problems that are related to files must be resolved.
+
+Database it a way to organize different kind of data together.
+
+Database provides a layer of abstraction.
+Suppose there are two users Vivek and Devendra. The data related to both of them will be isolated. 
+
+Schemas 
+Physical Schema 
+firstname,lastname,id
+Imran,khan,1
+
+Logical Schema
+FirstName  LastName Id
+Imran       Khan     1
+
+View Schema
+How is data represented to the end user!
+
+Entities 
+An entity is used to bind certain set of attributes together 
+Example:
+
+Student:
+	Id,Name,address,BloodGroup,Guardian,Cell number etc
+	
+Student-> Entity 
+Id,Name,address,BloodGroup,Guardian,Cell number -> Attributes 
+
+Models
+Conceptual Model
+ 
+FirstName 
+LastName 
+Id
+			
+Representational Model
+FirstName varchar(50)
+LastName varchar(50)
+id Int 
+
+Physical Model
+FirstName varchar(50) not null
+LastName varchar(50) not null
+id Int primary key
+
+Relationship in Entites 
+One to One 
+In a school a student is allowed to take only one subject as optional subject 
+
+Student(Entity) 1:1-> OptionalSubject(Entity)
+
+One to Many 
+In a school a student is allowed to take more than one sport
+Student(Entity) 1:N-> Sport(Entity)
+
+Many to One 
+In a school many sports can be participated by a particular student 
+
+Many to Many 
+Teachers can teach more than one subject! 
+
+#Different types of framework in sql 
+Sql is the language.
+Mysql,PostgreSql,Oracle or Mssql is the framework.
+
+#DDL-> Data defination language 
+Create 
+Alter
+Drop 
+Truncate 
+
+#DML-> Data Manipulation Language 
+Update 
+Insert 
+Delete 
+
+#DCL-> Data control language
+Projection
+Selection
+
+#TCL -> Transaction Controlled Language 
+COMMIT
+ROLLBACK
+SAVE TRANSACTION 
+
+Example
+Insert (Devendra)-> Saved Devendra in database 
+Commit 
+
+Delete (Deleted)
+SAVE TRANSACTION A
+
+Insert (Devendra)
+SAVE TRANSACTION B 
+
+ROLLBACK 
+
+#States of SQL
+Active 
+Partially Committed  -> Failed -> Aborted(ROLLBACK)
+Commited 
+END
+
+Any transaction that takes place in Sql has to atomic -> It has to take place in one go!
+
+Properties of sql(ACID)
+Atomic -> Whether is to completed or failed
+Consistency -> The updation should take place correctly even if there is concurrent access 
+Isolation -> When transaction takes place simultaneoulsy 
+Durability -> THe transaction once started should take place even in failures (the transaction would be completed or failed)
+
+#to see the present databases in our system
+show databases;
+
+#to use a particular db
+use database-name; 
+
+#Create a database 
+create database database-name;
+
+#drop a database 
+drop database database-name; 
+
+
+
+
+
+
+
+
+ 
+ 
