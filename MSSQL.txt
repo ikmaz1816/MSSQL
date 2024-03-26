@@ -138,7 +138,80 @@ create database database-name;
 #drop a database 
 drop database database-name; 
 
+#create a table
+create table table-name (
+	id INT,
+	firstname VARCHAR(20),
+	lastname VARCHAR(20),
+	address VARCHAR(30)
+);
 
+#Selection
+select * from tbl_name;
+
+#to describe a table
+desc table_name
+
+#Insert 
+insert into tbl_name (1,'Imran','Khan',''1151');
+
+#Only specific values to be inserted
+insert into tbl_name(id,firstname,lastname) values(1,'Imran','Khan');
+
+#update 
+update table_name set column1='',column2='' where condition
+
+#delete 
+delete from table_name where condition
+
+#Condition
+Or -> any value present in the database bring the tuple 
+select * from emp where first='Imran' or address='42045';
+
+And -> both the column values should match in order to retrieve the tuple 
+select * from emp where first='Imran' and address='42045';
+
+Not-> Negates the condition
+select * from emp where Not address='42045';
+
+#String based conditions 
+select * from emp where first='Imran';
+select * from emp where first like 'Imran';
+
+#to check if a string starts with a particular pattern
+select * from emp where first like 'Imr%';
+
+#to check if a string ends with a particular pattern
+select * from emp where first like '%Imr';
+
+#Mathematical Operators
+max
+select max(id) from emp;
+
+min
+select min(id) from emp;
+
+sum
+select sum(id) from emp;
+
+avg
+select avg(id) from emp;
+
+floor(1.2) -> 1             1.0 1.1 1.2 1.3 ........ 1.8 1.9 2.0
+ceil(1.2) -> 2
+
+select floor(avg(id)) from emp;
+select ceil(avg(id)) from emp;
+
+#truncate
+truncate table table-name
+
+#  delete vs drop vs truncate
+delete -> delete is used to remove particular tuple from the selected entity but if condition is not mentioned then it will act the same as truncate 
+
+truncate -> truncate is used to remove all tuples in an entity but schema is maintained
+
+drop -> it deletes all the tuples and also removes the entity from the database 
 
 
 
